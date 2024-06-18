@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    width: 100%;
+    background-color: #5f9ea0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav > ul > li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #ffeb3b;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: currentColor;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.searchForm {
+    position: relative;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.searchForm label {
+    position: absolute;
+    left: -99999px;
+}
+
+.searchForm input {
+    height: 40px;
+    width: 300px;
+    border: 2px solid #5f9ea0;
+    border-radius: 0.5rem;
+    padding: 0 15px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.searchForm input:focus {
+    border-color: #ffeb3b;
+    outline: none;
+}
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.post {
+    width: calc(50% - 40px);
+    border-bottom: 1px solid gray;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #9bbde0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.postDate {
+    background-color: #f8f9fa;
+    width: fit-content;
+    padding: 5px;
+    margin: 10px 0;
+    border-radius: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.postBody {
+    max-width: 100%;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* NewPost Styles */
+
+main {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.newPostForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.newPostForm label {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.newPostForm input,
+.newPostForm textarea {
+    padding: 10px;
+    border: 2px solid #5f9ea0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.newPostForm input:focus,
+.newPostForm textarea:focus {
+    border-color: #ffeb3b;
+    outline: none;
+}
+
+.newPostForm textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.newPostForm button {
+    padding: 10px;
+    background-color: #5f9ea0;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.newPostForm button:hover {
+    background-color: #ffeb3b;
+    color: #333;
+}
+
+footer {
+    background-color: #282c34;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+    .post {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    nav > ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .searchForm input {
+        width: 80%;
+    }
+
+    .post {
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 5px 0;
+    }
+
+    a {
+        font-size: 1rem;
+    }
+
+    .searchForm input {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .post {
+        width: calc(100% - 20px);
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .newPostForm label {
+        font-size: 1rem;
+    }
+
+    .newPostForm input,
+    .newPostForm textarea {
+        font-size: 0.9rem;
+    }
+
+    .newPostForm button {
+        font-size: 1rem;
+    }
+}
